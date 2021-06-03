@@ -1,34 +1,21 @@
-//import { gsap } from "gsap";
-//import { GSDevTools } from "gsap/GSDevTools";
+import { gsap } from "gsap";
+import { GSDevTools } from "gsap/GSDevTools";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 
-//import { zoomTL } from "./zoomIn"
-//import { fadeInTL } from "./fadeIn"
-//import { spaceShipTL } from "./space-ship"
-//import { liftOffTL } from "./liftOff"
-//import { flightTL } from "./flightPath"
-//import { moonZoomInTL } from "./moonZoom"
-//import { landingTL } from "./landing"
+gsap.registerPlugin(GSDevTools);
+gsap.registerPlugin(DrawSVGPlugin);
 
-//gsap.registerPlugin(GSDevTools);
+import { startupTL } from "./startUp"
+import { screenAppearsTL } from "./screenAppears"
 
-//let mainTL = gsap.timeline({paused:true});
+let mainTL = gsap.timeline();
 
-//mainTL.add(fadeInTL)
-        //.add(zoomTL)
-        //.add(spaceShipTL)
-        
-        //.add(liftOffTL)
-        //.add(flightTL ,"zoomFlight")
-        //.add(moonZoomInTL,"zoomFlight")
-        //.addLabel("marker")
-        //.add(landingTL);
-
-        //mainTL.play("marker");
-        // mainTL.play();
+mainTL.add(startupTL)
+        .add(screenAppearsTL);
 
 
-// console.log(numberThing);
+//console.log(numberThing);
 
-// GSDevTools.create();
+GSDevTools.create();
 
 
