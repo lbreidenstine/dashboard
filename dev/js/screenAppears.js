@@ -1,4 +1,7 @@
 import { gsap } from "gsap";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+
+gsap.registerPlugin(DrawSVGPlugin);
 
 export let screenAppearsTL = gsap.timeline();
 
@@ -30,7 +33,7 @@ screenAppearsTL.from("#main-circle",{duration:2, drawSVG: 0},"panel appears")
                 .from("#speed-label",{duration:1, alpha: 0},"speed appears")
                 .from("#speed-ticks",{duration:2, alpha: 0},"speed appears")
                 .from("#mph",{duration:2, alpha: 0},"speed appears")
-                .from("#speed-numbers",{duration:2, alpha: 0},"speed appears")
+                .from("#speed-numbers-1",{duration:2, alpha: 0},"speed appears")
                 .from("#fuel-label",{duration:2, alpha: 0},"speed appears")
                 .from("#e-empty",{duration:.25, alpha: 0},"speed appears")
                 .from("#gas-symbol",{duration:.25, alpha: 0},"speed appears")
